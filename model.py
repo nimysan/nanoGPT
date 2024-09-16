@@ -188,6 +188,7 @@ class GPT(nn.Module):
         else:
             # inference-time mini-optimization: only forward the lm_head on the very last position
             logits = self.lm_head(x[:, [-1], :]) # note: using list [-1] to preserve the time dim
+            # torch.Size([1, 1, 50304]) 50304=vocab_size 这里其实就是给出了词汇表中每个词跟当前环境的概率关系, 等于每次推理其实都是给出一个概率
             loss = None
 
         return logits, loss
@@ -310,6 +311,7 @@ class GPT(nn.Module):
         Most likely you'll want to make sure to be in model.eval() mode of operation for this.
         """
         for _ in range(max_new_tokens):
+            # print(_)
             # if the sequence context is growing too long we must crop it at block_size
             idx_cond = idx if idx.size(1) <= self.config.block_size else idx[:, -self.config.block_size:]
             # forward the model to get the logits for the index in the sequence
