@@ -11,7 +11,7 @@ dataset = 'chinese'
 init_from = 'resume' # this is the largest GPT-2 model
 
 # only save checkpoints if the validation loss improves
-always_save_checkpoint = False
+always_save_checkpoint = True
 block_size = 256
 
 # the number of examples per iter:
@@ -19,7 +19,7 @@ block_size = 256
 # shakespeare has 301,966 tokens, so 1 epoch ~= 9.2 iters
 batch_size = 1
 
-max_iters = 5100
+max_iters = 5300
 
 # finetune at constant LR
 learning_rate = 3e-5

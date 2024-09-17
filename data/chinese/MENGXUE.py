@@ -12,12 +12,10 @@ def process_json_files(root_dir, output_file):
                             print(file_path)
                             # data = json.load(json_file)json_file
                             # print('data '+ json_file)
-                            data_list = json.load(json_file)
-                            print(data_list)
-                            for data in data_list:  # 遍历列表中的每个字典
-                                if 'title' in data and 'author' in data and 'paragraphs' in data:
+                            data = json.load(json_file)
+                            if 'title' in data and 'author' in data and 'paragraphs' in data:
                                     # 将标题和作者写入
-                                    outfile.write(f"{data['title']}\n作者: 叶小微\n")
+                                    outfile.write(f"{data['title']}\n作者:{data['author']}\n")
 
                                     # 将paragraphs中的每个元素作为单独的一行写入
                                     if isinstance(data['paragraphs'], list):
@@ -29,17 +27,18 @@ def process_json_files(root_dir, output_file):
 
                                     # 在每个条目之后添加额外的换行
                                     outfile.write('\n')
+
                     except Exception as e:
                         print(f"Error processing {file_path}: {str(e)}")
 
 # 设置根目录和输出文件
 root_directory = "chinese-poetry"
-output_file = "yuanqu.txt"
+output_file = "output.txt"
 
 # 遍历根目录下的所有子目录
 for dir_name in os.listdir(root_directory):
     dir_path = os.path.join(root_directory, dir_name)
-    if os.path.isdir(dir_path) and "元曲" in dir_name:
+    if os.path.isdir(dir_path) and "蒙学" in dir_name:
         print(f"Processing directory: {dir_path}")
         process_json_files(dir_path, output_file)
 
