@@ -1,0 +1,18 @@
+{"time":"2024-09-16T14:17:07.0177041Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-16T14:17:07.0177041Z","level":"INFO","msg":"created symlink","path":"C:\\Users\\Administrator\\Documents\\GitHub\\nanoGPT\\ml-simple\\wandb\\run-20240916_141707-uzm75jg2\\logs\\debug-core.log"}
+{"time":"2024-09-16T14:17:07.0188446Z","level":"INFO","msg":"using version","core version":"0.18.0"}
+{"time":"2024-09-16T14:17:07.0188446Z","level":"INFO","msg":"created symlink","path":"C:\\Users\\Administrator\\Documents\\GitHub\\nanoGPT\\ml-simple\\wandb\\run-20240916_141707-uzm75jg2\\logs\\debug-core.log"}
+{"time":"2024-09-16T14:17:07.0300492Z","level":"INFO","msg":"created new stream","id":"uzm75jg2"}
+{"time":"2024-09-16T14:17:07.0300492Z","level":"INFO","msg":"stream: started","id":"uzm75jg2"}
+{"time":"2024-09-16T14:17:07.0300492Z","level":"INFO","msg":"handler: started","stream_id":{"value":"uzm75jg2"}}
+{"time":"2024-09-16T14:17:07.0300492Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"uzm75jg2"}}
+{"time":"2024-09-16T14:17:07.0306491Z","level":"INFO","msg":"sender: started","stream_id":{"value":"uzm75jg2"}}
+{"time":"2024-09-16T14:17:07.5450842Z","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-16T14:17:07.5481034Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-16T14:17:09.2207861Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-16T14:17:09.2207861Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-16T14:17:14.5526536Z","level":"INFO","msg":"stream: closing","id":"uzm75jg2"}
+{"time":"2024-09-16T14:17:14.5526536Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"uzm75jg2"}}
+{"time":"2024-09-16T14:17:14.5526536Z","level":"INFO","msg":"sender: closed","stream_id":{"value":"uzm75jg2"}}
+{"time":"2024-09-16T14:17:14.5526536Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"uzm75jg2"}}
+{"time":"2024-09-16T14:17:14.5526536Z","level":"INFO","msg":"stream: closed","id":"uzm75jg2"}

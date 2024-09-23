@@ -1,0 +1,32 @@
+{
+  "os": "Windows-10-10.0.20348-SP0",
+  "python": "3.10.14",
+  "startedAt": "2024-09-16T14:17:07.013982Z",
+  "program": "C:\\Users\\Administrator\\Documents\\GitHub\\nanoGPT\\ml-simple\\simple_linear.py",
+  "codePath": "ml-simple\\simple_linear.py",
+  "git": {
+    "remote": "https://github.com/nimysan/nanoGPT.git",
+    "commit": "07b8870e68cca5d77a45ed0f6f1a70d1941a2231"
+  },
+  "email": "234aini@gmail.com",
+  "root": "C:\\Users\\Administrator\\Documents\\GitHub\\nanoGPT\\ml-simple",
+  "host": "EC2AMAZ-ITQTTMO",
+  "username": "Administrator",
+  "executable": "C:\\ProgramData\\anaconda3\\envs\\torch-ml\\python.exe",
+  "codePathLocal": "simple_linear.py",
+  "cpu_count": 2,
+  "cpu_count_logical": 4,
+  "disk": {
+    "/": {
+      "total": "536868810752",
+      "used": "202488414208"
+    }
+  },
+  "memory": {
+    "total": "16864800768"
+  },
+  "cpu": {
+    "count": 2,
+    "countLogical": 4
+  }
+}

@@ -211,7 +211,15 @@ if compile:
 if ddp:
     model = DDP(model, device_ids=[ddp_local_rank])
 
-# helps estimate an arbitrarily accurate loss over either split using many batches
+import torch
+
+def length_penalty(logits, penalty_factor=0.1):
+    # 假设 logits 的形状是 [batch_size, sequence_length, vocab_size]
+    sequence_lengths = torch.sum(torch.max(logits, dim=-1)[0] != 0, dim=1)
+    # 使用 smooth_l1_loss 来平滑序列长度，减少 loss 的起伏
+    smoothed_lengths = torch.nn.functional.smooth_l1_loss(sequence_lengths.float(), torch.zeros_like(sequence_lengths.float()), reduction='mean')
+    return penalty_factor * smoothed_lengths
+
 @torch.no_grad()
 def estimate_loss():
     out = {}
@@ -222,10 +230,28 @@ def estimate_loss():
             X, Y = get_batch(split)
             with ctx:
                 logits, loss = model(X, Y)
-            losses[k] = loss.item()
+                length_loss = length_penalty(logits)
+                total_loss = loss + length_loss
+            losses[k] = total_loss.item()
         out[split] = losses.mean()
     model.train()
     return out
+#
+# # helps estimate an arbitrarily accurate loss over either split using many batches
+# @torch.no_grad()
+# def estimate_loss():
+#     out = {}
+#     model.eval()
+#     for split in ['train', 'val']:
+#         losses = torch.zeros(eval_iters)
+#         for k in range(eval_iters):
+#             X, Y = get_batch(split)
+#             with ctx:
+#                 logits, loss = model(X, Y)
+#             losses[k] = loss.item()
+#         out[split] = losses.mean()
+#     model.train()
+#     return out
 
 # learning rate decay scheduler (cosine with warmup)
 def get_lr(it):

@@ -1,0 +1,12 @@
+Epoch [10/100], Loss: 1.6114
+Epoch [20/100], Loss: 1.0865
+Epoch [30/100], Loss: 0.7339
+Epoch [40/100], Loss: 0.4968
+Epoch [50/100], Loss: 0.3374
+Epoch [60/100], Loss: 0.2301
+Epoch [70/100], Loss: 0.1578
+Epoch [80/100], Loss: 0.1091
+Epoch [90/100], Loss: 0.0762
+Epoch [100/100], Loss: 0.0541
+Final weight: 1.7865
+Final bias: 1.0074
